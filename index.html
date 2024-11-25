@@ -3,96 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inner City - VR Mental Health Solution</title>
+    <!-- 预加载字体文件 -->
+    <link rel="preload" href="./fonts/Candara/Candara-Regular.ttf" as="font" type="font/truetype" crossorigin>
+    <link rel="preload" href="./fonts/Candara/Candara-Bold.ttf" as="font" type="font/truetype" crossorigin>
+    
+     <title>Inner City - VR Mental Health Serious Game</title>
     <link rel="stylesheet" href="./css/style.css">
+
 </head>
 <body>
     <header class="header">
-        <nav class="nav">
-            <div class="logo">EnterTreatment</div>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#features">Features</a>
-                <a href="#solution">Solutions</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+        <nav class="nav-container">
+            <div class="logo-container">
+                <h1>Inner City</h1>
+                <div class="demo-text">{ DEMO Edition }</div>
+            </div>
+            <div class="nav-menu">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">About the Game</a>
+                <a href="#" class="nav-link">Features</a>
+                <a href="#" class="nav-link">About</a>
+                <a href="#" class="download-btn">Download</a>
             </div>
         </nav>
     </header>
 
-    <section id="home" class="hero">
-        <video class="video-background" autoplay loop muted playsinline>
-            <source src="./assets/videos/head_background.mp4" type="video/mp4">
+    <section class="hero">
+        <video class="background-video" autoplay loop muted playsinline>
+            <source src="./assets/videos/concept_video.mp4" type="video/mp4">
         </video>
         <div class="hero-content">
-            <h1 class="hero-title">Inner City</h1>
-            <p class="hero-subtitle">AI-Driven VR Mental Health Solution</p>
-            <a href="#contact" class="button">Learn More</a>
-        </div>
-    </section>
-
-    <section id="features" class="section">
-        <h2>Key Features</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>VR Immersion</h3>
-                <p>Immersive therapeutic experience through virtual reality technology</p>
+            <div class="title-container">
+                <h1 class="hero-title">Inner City</h1>
+                <img src="./images/DEMO_Edition.png" alt="DEMO Edition" class="demo-badge">
             </div>
-            <div class="card">
-                <h3>AI Dialogue System</h3>
-                <p>Intelligent AI assistance providing personalized psychological counseling</p>
-            </div>
-            <div class="card">
-                <h3>CBT Integration</h3>
-                <p>Scientific approach to workplace burnout through Cognitive Behavioral Therapy</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="solution" class="section">
-        <h2>Enterprise Solutions</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>HR Management Tools</h3>
-                <p>Employee mental health management solutions for HR professionals</p>
-            </div>
-            <div class="card">
-                <h3>Employee Care</h3>
-                <p>Mental health intervention services targeting young professionals</p>
-            </div>
-            <div class="card">
-                <h3>Data Analytics</h3>
-                <p>Professional employee mental health assessment reports</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="section">
-        <h2>About Us</h2>
-        <p class="section-intro">
-            EnterTreatment is an innovative project from Hong Kong Polytechnic University's MSc in 
-            Multimedia and Entertainment Technology program. We're dedicated to improving workplace 
-            mental health through advanced technology.
-        </p>
-        <div class="grid">
-            <div class="card">
-                <h3>Project Achievements</h3>
-                <p>81.4% User Satisfaction<br>Significant improvement in emotional exhaustion (p < 0.05)</p>
-            </div>
-            <div class="card">
-                <h3>Business Success</h3>
-                <p>7+ Enterprise Interests<br>2+ Investment Supports<br>3+ Potential Partners</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section">
-        <h2>Contact Us</h2>
-        <div class="contact-container">
-            <p class="section-intro">
-                Interested in our solutions? We'd love to discuss how we can help your organization.
-            </p>
-            <a href="#" class="button">Schedule Demo</a>
+            <p class="hero-subtitle">Shrink Your Burdens: A Journey to Self-Discovery</p>
+            <a href="#explore" class="explore-btn">Explore</a>
         </div>
     </section>
 </body>
