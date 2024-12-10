@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // 视频循环播放控制
+    const video = document.querySelector('.background-video');
+    if (video) {
+        video.play();
+        video.addEventListener('ended', function() {
+            video.currentTime = 0;
+            video.play();
+        }, false);
+    }
+
     const header = document.querySelector('.header');
     const navLinks = document.querySelectorAll('.nav-link');
     
@@ -32,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+    // 节流函数
     function throttle(func, limit) {
         let inThrottle;
         return function() {
@@ -45,13 +56,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // 修改后的平滑滚动函数
-    function smoothScroll(targetPosition, duration = 600) { // 减少持续时间到600ms
+    // 平滑滚动函数
+    function smoothScroll(targetPosition, duration = 600) {
         const startPosition = window.pageYOffset;
         const distance = targetPosition - startPosition;
         const startTime = performance.now();
         
-        function easeOutQuint(t) { // 使用更快的缓动函数
+        function easeOutQuint(t) {
             return 1 + (--t) * t * t * t * t;
         }
         
@@ -72,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
         requestAnimationFrame(animation);
     }
     
-    // 根据滚动位置更新激活状态
+    // 滚动监听，更新导航激活状态
     window.addEventListener('scroll', throttle(function() {
         const scrollPosition = window.scrollY + 100;
         const sections = document.querySelectorAll('section');
@@ -90,10 +101,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
+        // 处理首页导航激活状态
         if (scrollPosition < 100) {
             navLinks.forEach(l => l.classList.remove('active'));
             const homeLink = document.querySelector('a[href="#home"]');
             if (homeLink) homeLink.classList.add('active');
         }
     }, 100));
+
+    // 初始化导航激活状态
+    window.dispatchEvent(new Event('scroll'));
 });
