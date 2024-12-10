@@ -1,17 +1,16 @@
-/* 声明 Candara Regular */
+/* 字体声明 */
 @font-face {
     font-family: 'Candara';
     src: url('../fonts/Candara/Candara-Regular.ttf') format('truetype');
-    font-weight: 400;  /* Regular 对应 400 字重 */
+    font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 
-/* 声明 Candara Bold */
 @font-face {
     font-family: 'Candara';
     src: url('../fonts/Candara/Candara-Bold.ttf') format('truetype');
-    font-weight: 700;  /* Bold 对应 700 字重 */
+    font-weight: 700;
     font-style: normal;
     font-display: swap;
 }
@@ -21,98 +20,127 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif; 
+    font-family: Arial, sans-serif;
 }
+
 
 body {
-    overflow-x: hidden;
-}
-
-.header {
-    position: fixed;
+    margin: 0;
+    padding: 0;
     width: 100%;
-    padding: 20px 50px;
-    z-index: 100;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.3), transparent);
-    align-items: center;
+    overflow-x: hidden;
     
 }
 
+/* Header样式 */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 0;
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(90deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 100%);
+}
+
+.header.scrolled {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
 .nav-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;  /* 调整整体内边距 */
-    width: 100%;
 }
 
 .logo-container {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 0px;
-    color: white;
+    gap: 10px;
 }
 
-.logo-text {
+.logo-svg {
+    width: 32px;
+    height: 32px;
+    fill: white; /* SVG填充颜色 */
+}
+
+.logo-svg path {
+    transition: fill 0.3s ease;
+}
+
+.main-title {
+    color: white;
     font-family: 'Candara', sans-serif;
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 700;
+    margin: 0;
 }
 
-.demo-text {
-    font-family: 'Candara', sans-serif;
+.sub-title {
+    color: white;
     font-size: 14px;
-    font-weight: lighter;
+    margin: 0;
 }
 
-.nav-menu {
+.nav-links {
     display: flex;
-    align-items: center;
     gap: 30px;
+    align-items: center;
 }
 
 .nav-link {
-    position: relative;
     color: white;
     text-decoration: none;
     font-family: 'Candara', sans-serif;
     font-size: 16px;
-    padding-bottom: 6px;
-    font-weight: 400;
+    font-weight: 700;
     transition: all 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
 }
 
 .nav-link::after {
     content: '';
     position: absolute;
-    bottom: -4px;
+    bottom: 0;
     left: 0;
-    width: 100%;
+    width: 0;
     height: 2px;
-    background: white;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease-in-out;
+    background-color: white;
+    transition: width 0.3s ease-in-out;
 }
 
 .nav-link:hover::after,
 .nav-link.active::after {
-    transform: scaleX(1);
+    width: 100%;
 }
 
-.download-btn {
-    display: inline-flex;
-    align-items: center;
-    background: linear-gradient(90deg, #F4A460, #32CD32);
-    padding: 10px 24px;
-    border-radius: 20px;
+.nav-link.download {
+    background: linear-gradient(90deg, #F37127 0%, #4DB97F 100%);
+    padding: 12px 24px;
+    border-radius: 25px;
     color: white;
-    text-decoration: none;
-    font-weight: 500;
-    margin-left: 20px;  /* 与其他导航项的间距 */
+    font-family: 'Candara', sans-serif;
 }
 
+.nav-link.download:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.nav-link.download::after {
+    display: none;
+}
+
+/* Hero部分 */
 .hero {
     height: 100vh;
     width: 100%;
@@ -144,11 +172,10 @@ body {
 .title-container {
     position: relative;
     display: inline-block;
-    
 }
 
 .hero-title {
-    font-family: 'candara', sans-serif;
+    font-family: 'Candara', sans-serif;
     font-size: 170px;
     font-weight: 400;
     color: white;
@@ -157,16 +184,16 @@ body {
 
 .demo-badge {
     position: absolute;
-    top: 0; 
-    right: 0px; 
-    width: auto;   /* 图片宽度根据实际情况调整 */
-    height: 50px;  /* 图片高度根据实际情况调整 */
+    top: 0;
+    right: 0;
+    width: auto;
+    height: 50px;
 }
 
 .hero-subtitle {
-    font-family: 'candara', sans-serif;
+    font-family: 'Candara', sans-serif;
     font-size: 32px;
-    font-weight: 300px;
+    font-weight: 300;
     margin-top: 100px;
     margin-bottom: 40px;
     max-width: 800px;
@@ -185,4 +212,316 @@ body {
 
 .explore-btn:hover {
     transform: scale(1.05);
+}
+
+/* 游戏概念部分 */
+.game-concept {
+    padding: 60px 20px;
+    background-color: #F7F7F7;
+}
+
+.concept-title-wrapper {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.concept-main-title {
+    font-family: 'Candara', sans-serif;
+    font-size: 36px;
+    color: #000000;
+    position: relative;
+    display: inline-block;
+}
+
+.concept-container {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    padding-bottom: 70px;
+}
+
+.concept-video-wrapper {
+    width: 480px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.concept-video {
+    width: 100%;
+}
+
+.badge-text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.badge-highlight-wrapper {
+    margin-top: 4px;
+}
+
+.badge-highlight {
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.concept-paragraph {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 20px;
+    margin-top: -6px;
+}
+
+/* 徽章部分 */
+.badge-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.badge-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.badge-decoration {
+    width: 30px;
+    height: 40px;
+    fill: currentColor; /* SVG颜色继承父元素 */
+}
+
+.badge-text {
+    color: #333;
+    font-size: 14px;
+}
+
+.badge-highlight {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* 默认黑色，不需要特殊处理 */
+.concept-main-title {
+    color: #000;
+}
+.decoration-icon {
+    /* 默认保持原色（黑色） */
+}
+
+/* 只在需要白色的地方添加 white 类 */
+.concept-main-title.white {
+    color: #fff; /* 白色文字 */
+}
+.concept-main-title.white .decoration-icon {
+    filter: brightness(0) invert(1);
+}
+
+/* 特性部分 */
+.key-features-section {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 670px;
+    margin: 0;
+    padding-bottom: 60px;
+}
+
+.features-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.features-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    z-index: 1;
+    display: flex;          /* 添加flex布局 */
+    flex-direction: column; /* 垂直排列 */
+    align-items: center;    /* 水平居中 */
+}
+
+
+.features-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    margin-top: 60px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 24px;
+    
+}
+
+.feature-card h3 {
+    font-family: candara, sans-serif;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 24px;
+}
+
+.feature-video {
+    background: #000;
+    width: 100%;
+    aspect-ratio: 16/9;
+    
+}
+
+/* 响应式布局 */
+@media (max-width: 768px) {
+    .features-cards {
+        flex-direction: column;
+    }
+    
+    .feature-card {
+        width: 100%;
+    }
+}
+
+/* 关于部分 */
+.gradient-bar {
+    width: 100%;
+    height: 14px;
+    background: linear-gradient(90deg, #F37127 0%, #70CCAF 100%);
+}
+.about-section {
+    background: #333;
+    color: white;
+    padding: 60px 0;
+}
+
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-text {
+    max-width: 600px;
+    line-height: 28px;
+    font-size: 20px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+}
+
+
+/* 响应式设计 */
+@media (max-width: 1160px) {
+    .concept-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .concept-video-wrapper,
+    .concept-text {
+        width: 100%;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 968px) {
+    .features-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-card {
+        width: 100%;
+        max-width: 500px;
+        min-width: auto;
+        margin: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .nav-link {
+        font-size: 14px;
+    }
+
+    .hero-title {
+        font-size: 80px;
+    }
+    
+    .hero-subtitle {
+        font-size: 24px;
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+    
+    .concept-video-wrapper {
+        width: 100%;
+    }
+    
+    .badge-content {
+        padding: 0 20px;
+    }
+}
+
+/* 暗色模式 */
+@media (prefers-color-scheme: dark) {
+    .game-concept {
+        background-color: #1a1a1a;
+    }
+    
+    .concept-paragraph {
+        color: #e0e0e0;
+    }
+    
+    .feature-card {
+        background: #2a2a2a;
+    }
+    
+    .feature-card h3,
+    .feature-card p {
+        color: #e0e0e0;
+    }
+
+    .badge-text {
+        color: #e0e0e0;
+    }
+
+    .badge-decoration {
+        filter: invert(1);
+    }
 }

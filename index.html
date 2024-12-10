@@ -11,22 +11,23 @@
 
 </head>
 <body>
+    <!-- 导航栏部分 -->
     <header class="header">
         <nav class="nav-container">
-            <div class="logo-container">
-                <h1>Inner City</h1>
-                <div class="demo-text">{ DEMO Edition }</div>
+            <div class="logo-section">
+                <h1 class="main-title">Inner City</h1>
+                <p class="sub-title">{ DEMO Edition }</p>
             </div>
-            <div class="nav-menu">
-                <a href="#" class="nav-link">Home</a>
-                <a href="#" class="nav-link">About the Game</a>
-                <a href="#" class="nav-link">Features</a>
-                <a href="#" class="nav-link">About</a>
-                <a href="#" class="download-btn">Coming Soon</a>
+            <div class="nav-links">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#game-concept" class="nav-link">Game Concept</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#download" class="nav-link download">Coming Soon</a>
             </div>
         </nav>
     </header>
-
+    <!-- KV -->
     <section class="hero">
         <video class="background-video" autoplay loop muted playsinline>
             <source src="./assets/videos/concept_video.mp4" type="video/mp4">
@@ -40,5 +41,136 @@
             <a href="#explore" class="explore-btn">Coming Soon</a>
         </div>
     </section>
-</body>
+
+     <!-- Game Concept -->
+    <section id="game-concept" class="game-concept">
+        <div class="concept-title-wrapper">
+            <h2 class="concept-main-title">
+                <span class="title-decoration left">
+                    <img src="images/quote_left.svg" alt="" class="decoration-icon">
+                </span>
+                 Game concept 
+                <span class="title-decoration right">
+                    <img src="images/quote_right.svg" alt="" class="decoration-icon">
+                </span>
+            </h2>
+        </div>
+    
+    <section class="concept-section"> 
+        <div class="concept-container">
+            <!-- 左侧部分 -->
+            <div class="concept-video-wrapper">
+                <img src="images/video_alter.png" alt="Game Scene" class="concept-video">
+                <div class="concept-text-container">
+                    <div class="badge-content">
+                        <div class="badge-row">
+                            <img src="images/arrow_left.svg" alt="" class="badge-decoration left">
+                            <div class="badge-text-content">
+                                <span class="badge-text">Positive Effect on Reducing Work-Related</span>
+                                <div class="badge-highlight-wrapper">
+                                    <strong class="badge-highlight">" Emotional Exhaustion "</strong>
+                                </div>
+                            </div>
+                            <img src="images/arrow_right.svg" alt="" class="badge-decoration right">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- 右侧部分 -->
+            <div class="concept-text">
+                <p class="concept-paragraph">
+                    In a world where office desks tower like skyscrapers and paperwork looms like mountains, June opens a mysterious email that pulls you both into a surreal realm. Here, humans appear microscopic against the overwhelming landscape of corporate existence. June whispers, "Will you help me find a way out?" Each memory fragment you discover is a piece of June's forgotten self.
+                </p>
+                <p class="concept-paragraph">
+                    As your guide and AI therapist, June's unique perspective helps you reflect on your own relationship with work and life. Through natural conversation and shared experiences, she adapts to your personal journey, creating a safe space for healing. While helping June recover her memories, you'll find her therapeutic insights gradually illuminate your own path through burnout and self-discovery. Her gentle questions and observations transform the overwhelming desktop landscape into a metaphorical journey of growth and renewed purpose.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section id="features" class="key-features-section"> 
+        <img src="./images/features_bg.png" alt="" class="features-bg">
+    <div class="features-container">
+        <h2 class="concept-main-title white">
+            <span class="title-decoration left">
+                <img src="images/quote_left.svg" alt="" class="decoration-icon">
+            </span>
+            Key Features
+            <span class="title-decoration right">
+                <img src="images/quote_right.svg" alt="" class="decoration-icon">
+            </span>
+        </h2>
+
+            
+            <div class="features-cards">
+                <!-- 特性卡片1 -->
+                <div class="feature-card">
+                    <h3>Immersive Storytelling</h3>
+                    <p>Immersive therapeutic experience through virtual reality technology.</p>
+                    <video class="feature-video" autoplay loop muted playsinline>
+                        <source src="./assets/videos/Collect.mp4" type="video/mp4">
+                    </video>
+                </div>
+    
+                <!-- 特性卡片2 -->
+                <div class="feature-card">
+                    <h3>AI Dialogue System</h3>
+                    <p>Intelligent AI assistance providing personalized psychological counseling.</p>
+                    <video class="feature-video" autoplay loop muted playsinline>
+                        <source src="./assets/videos/AI.mp4" type="video/mp4">
+                    </video>
+                </div>
+    
+                <!-- 特性卡片3 -->
+                <div class="feature-card">
+                    <h3>CBT Integration</h3>
+                    <p>Scientific approach to workplace burnout through Cognitive Behavioral Therapy.</p>
+                    <video class="feature-video" autoplay loop muted playsinline>
+                        <source src="./assets/videos/CBT.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- About Section -->
+<div class="gradient-bar"></div>
+<section class="about-section" id="about">
+    <div class="about-container">
+        <div class="concept-title-wrapper">
+            <h2 class="concept-main-title white">
+                <span class="title-decoration left">
+                    <img src="images/quote_left.svg" alt="" class="decoration-icon">
+                </span>
+                 About Us 
+                <span class="title-decoration right">
+                    <img src="images/quote_right.svg" alt="" class="decoration-icon">
+                </span>
+            </h2>
+        </div>
+        <p class="about-text">
+            Inner City is an innovative project from Hong Kong Polytechnic University's MSc in MET Student Team. We're dedicated to improving workplace mental health through advanced technology.
+        </p>
+   
+        <div class="concept-title-wrapper">
+            <h2 class="concept-main-title white">
+                <span class="title-decoration left">
+                    <img src="images/quote_left.svg" alt="" class="decoration-icon">
+                </span>
+                 Contact Us 
+                <span class="title-decoration right">
+                    <img src="images/quote_right.svg" alt="" class="decoration-icon">
+                </span>
+            </h2>
+        </div>
+        <p class="about-text">
+            vittoria.yy1230@gmail.com
+        </p>
+    </div>
+</section>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/main.js"></script>
+    </body>
 </html>
